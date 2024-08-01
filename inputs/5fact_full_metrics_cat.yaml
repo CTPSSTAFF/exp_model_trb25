@@ -1,0 +1,317 @@
+# EMAT Scope Definition
+# https://tmip-emat.github.io/source/emat.scope/scope.file.html 
+
+scope:
+    name: five_factors
+    desc: EMAT with ebike, tnc, wfh, hrt, and av
+    
+inputs:
+    #CTPS exploratory modelling test
+    Electric Bike:
+        ptype: uncertainty
+        shortname: ebike
+        desc: Faster and Further with E-Bikes
+        default: 12
+        min: 12
+        max: 15
+        dist: uniform
+        dtype: float        
+
+    TNC Availability:
+        ptype: uncertainty
+        shortname: tnc_av
+        desc: TNCs more or less available and affordable
+        default: 1
+        min: 0.5
+        max: 1.5
+        dist: uniform
+        dtype: float    
+
+    HRT Reliability:
+        ptype: uncertainty
+        shortname: hrt_delay
+        desc: HRT with varying headway and runtimes
+        default: 1
+        min: 1
+        max: 1.5
+        dist: uniform
+        dtype: float    
+
+    Post-Pandemic WFH:
+        ptype: uncertainty
+        shortname: wfh
+        desc: Adjustment from Spring 2023 WFH Levels
+        default: 0
+        min: 0
+        max: 1.0
+        dist: uniform
+        dtype: float
+
+    AV Operations:
+        ptype: uncertainty
+        shortname: AV
+        desc: Passenger car equivalent (PCE)
+        default: 1.0000001
+        min: 0.75
+        max: 1.2
+        dist: uniform
+        dtype: float        
+
+    DryRun:
+        ptype: Constant
+        desc: Dry Run enabled for testing
+        default: 0
+        dtype: int
+        
+    # Dedicated Transit ROW:
+    #     ptype: policy lever
+    #     shortname: BRT
+    #     desc: Reduce number of lanes available to cars / trucks on selected links
+    #     dtype: cat
+    #     default: 0
+    #     values:
+    #         - 0
+    #         - 1
+    #         - 2
+    #         - 3
+        
+    # Adoption of Autonomous Vehicles:
+    #     ptype: uncertainty
+    #     shortname: AV
+    #     desc: Passenger car equivalent (PCE)
+    #     default: 1.0000001
+    #     min: 0.75
+    #     max: 1.2
+    #     dist: uniform
+    #     dtype: float
+
+outputs:
+    BRMPO_VA_ZV_Shr:
+        shortname: ZV
+    BRMPO_VA_IV_Shr:
+        shortname: IV
+    BRMPO_VA_SV_Shr:
+        shortname: SV
+    BRMPO_Auto_Shr:
+        shortname: auto shr
+    BRMPO_NM_Shr:
+        shortname: nm shr
+    BRMPO_TRN_Shr:
+        shortname: trn shr
+    BRMPO_SB_Shr:
+        shortname: sb shr
+    BRMPO_hbw:
+        shortname: hbw
+    BRMPO_hbnw:
+        shortname: hbnw
+    BRMPO_nhbw:
+        shortname: nhbw
+    BRMPO_nhbnw:
+        shortname: nhbw
+    BRMPO_HH_Trips:
+        shortname: HH Trips
+    BRMPO_Auto_Trips:
+        shortname: Auto Trips
+    BRMPO_DA_Trips:
+        shortname: DA Trips
+    BRMPO_SR_Trips:
+        shortname: SR Trips
+    BRMPO_MTRK_Trips:
+        shortname: MTRK Trips
+    BRMPO_HTRK_Trips:
+        shortname: HTRK Trips
+    BRMPO_Freeway_VMT:
+        shortname: Freeway VMT
+    BRMPO_Expressway_VMT:
+        shortname: Expressway VMT
+    BRMPO_Mj_Arterial_VMT:
+        shortname: Mj Arterial VMT
+    # BRMPO_Mn_Arterial_VMT:
+    #     shortname: Mn Arterial VMT
+    BRMPO_Total_VMT:
+        shortname: Total VMT
+    BRMPO_Auto_VMT:
+        shortname: Auto VMT
+    BRMPO_DA_VMT:
+        shortname: DA VMT
+    BRMPO_SR_VMT:
+        shortname: SR VMT
+    BRMPO_MTRK_VMT:
+        shortname: MTRK VMT
+    BRMPO_HTRK_VMT:
+        shortname: HTRK VMT
+    BRMPO_Freeway_CVMT:
+        shortname: Freeway CVMT
+    BRMPO_Expressway_CVMT:
+        shortname: Expressway CVMT
+    BRMPO_Mj_Arterial_CVMT:
+        shortname: Mj Arterial CVMT
+    BRMPO_Mn_Arterial_CVMT:
+        shortname: Mn Arterial CVMT
+    BRMPO_Total_CVMT:
+        shortname: Total CVMT
+    BRMPO_CO2:
+        shortname: CO2
+    BRMPO_CO:
+        shortname: CO
+    BRMPO_SO:
+        shortname: SO
+    BRMPO_NO:
+        shortname: NO
+    BRMPO_VOC:
+        shortname: VOC
+
+
+
+    inc_hlth_hwy:
+        shortname: inc_hlth_hwy
+    eth_hlth_hwy:
+        shortname: eth_hlth_hwy
+    linc_hlth_hwy:
+        shortname: linc_hlth_hwy
+    mnr_hlth_hwy:
+        shortname: mnr_hlth_hwy
+    n_linc_hlth_hwy:
+        shortname: n_linc_hlth_hwy
+    n_mnr_hlth_hwy:
+        shortname: n_mnr_hlth_hwy
+
+
+    inc_park_hwy:
+        shortname: inc_park_hwy
+    eth_park_hwy:
+        shortname: eth_park_hwy
+    linc_park_hwy:
+        shortname: linc_park_hwy
+    mnr_park_hwy:
+        shortname: mnr_park_hwy
+    n_linc_park_hwy:
+        shortname: n_linc_park_hwy
+
+    n_mnr_park_hwy:
+        shortname: n_mnr_park_hwy
+
+    linc_jobs_hwy:
+        shortname: linc_jobs_hwy
+    mnr_jobs_hwy:
+        shortname: mnr_jobs_hwy
+    n_linc_jobs_hwy:
+        shortname: n_linc_jobs_hwy
+    n_mnr_jobs_hwy:
+        shortname: n_mnr_jobs_hwy
+    ## less impact on hwy
+    inc_jobs_hwy:
+        shortname: inc_jobs_hwy
+    eth_jobs_hwy:
+        shortname: eth_jobs_hwy
+
+    inc_avg_time_hwy:
+        shortname: inc_avg_time_hwy
+    eth_avg_time_hwy:
+        shortname: eth_avg_time_hwy
+    linc_avg_time_hwy:
+        shortname: linc_avg_time_hwy
+    mnr_avg_time_hwy:
+        shortname: mnr_avg_time_hwy
+    n_linc_avg_time_hwy:
+        shortname: n_linc_avg_time_hwy
+    n_mnr_avg_time_hwy:
+        shortname: n_mnr_avg_time_hwy
+  
+    ## transit 
+    lbus:
+        shortname: lbus
+    xbus:
+        shortname: xbus
+    brt:
+        shortname: brt
+    lrt:
+        shortname: lrt
+    hr:
+        shortname: hr
+    cr:
+        shortname: cr
+    bt:
+        shortname: bt
+    shtl:
+        shortname: shtl
+    rta:
+        shortname: rta
+    regb:
+        shortname: regb
+    total_transit:
+        shortname: total_transit
+
+    ## higher impact on transit
+    inc_avg_time_trn:
+        shortname: inc_avg_time_trn
+    eth_avg_time_trn:
+        shortname: eth_avg_time_trn        
+    linc_avg_time_trn:
+        shortname: linc_avg_time_trn
+    mnr_avg_time_trn:
+        shortname: mnr_avg_time_trn
+    n_linc_avg_time_trn:
+        shortname: n_linc_avg_time_trn
+    n_mnr_avg_time_trn:
+        shortname: n_mnr_avg_time_trn
+
+
+    ## 2nd higher impact on transit
+    inc_hlth_trn:
+        shortname: inc_hlth_trn
+
+    eth_hlth_trn:
+        shortname: eth_hlth_trn
+
+    linc_hlth_trn:
+        shortname: linc_hlth_trn
+    mnr_hlth_trn:
+        shortname: mnr_hlth_trn
+    n_linc_hlth_trn:
+        shortname: n_linc_hlth_trn
+
+    n_mnr_hlth_trn:
+        shortname: n_mnr_hlth_trn
+
+    ## 3rd higher impact on transit
+    inc_park_trn:
+        shortname: inc_park_trn
+    eth_park_trn:
+        shortname: eth_park_trn
+
+    linc_park_trn:
+        shortname: linc_park_trn
+
+    mnr_park_trn:
+        shortname: mnr_park_trn
+
+    n_linc_park_trn:
+        shortname: n_linc_park_trn
+
+    n_mnr_park_trn:
+        shortname: n_mnr_park_trn
+
+    ## less impact on transit
+
+    inc_jobs_trn:
+        shortname: inc_jobs_trn
+
+    eth_jobs_trn:
+        shortname: eth_jobs_trn
+
+    linc_jobs_trn:
+        shortname: linc_jobs_trn
+
+    mnr_jobs_trn:
+        shortname: mnr_jobs_trn
+
+    n_linc_jobs_trn:
+        shortname: n_linc_jobs_trn
+
+
+    n_mnr_jobs_trn:
+        shortname: n_mnr_jobs_trn
+
+
+
