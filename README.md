@@ -13,7 +13,7 @@ Full set of results, analysis notebooks, and metric documentation with the exper
 
   * The released environment  for `TDM23 `is recommended for running the notebooks
 
-  * A installation guide can be found in [TDM23 1.0 user guide](https://ctpsstaff.github.io/tdm23_users_guide/1.0/pages/get_started/setup/)
+  * The installation guide can be found in [TDM23 1.0 user guide](https://ctpsstaff.github.io/tdm23_users_guide/1.0/pages/get_started/setup/)
 
   * For a detailed **video** tutorial, please refer to the [link](https://ctps.org/pub/tdm23_sc/videos/tdm23_env_offical_guide.mp4).
 
